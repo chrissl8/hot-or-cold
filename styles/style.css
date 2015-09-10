@@ -346,3 +346,27 @@ ul.guessBox li {
 	margin: 0.2em;
 	color: #fff;
 }
+
+/* Responsive CSS Media Query for Mobile Devices: Tested iPhone 6 (non-plus) and below and Samsung Galaxy S6 */
+
+@media only screen  
+and (max-device-width : 375px) 
+and (orientation : portrait) {
+
+.what {
+	display: none;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
