@@ -1,8 +1,14 @@
+<!--
+HOT or COLD Number Guessing Game
+By Chris Slaight, 2015
+-index.html main HTML page for application
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 
-		<title>Hot || Cold</title>
+		<title>HOT or COLD</title>
 
 		<!-- Meta Tags -->
 		<meta charset="utf-8"/>
@@ -15,7 +21,7 @@
 		<!-- JavaScript -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
-	
+	<link rel="shortcut icon" href="favicon.ico">
 	</head>
 	<body>
 		
@@ -24,8 +30,8 @@
 			<!-- Top Navigation -->
 			<nav> 
 				<ul class="clearfix">
-					<li><a class="what" href="#">What ?</a></li>
-					<li><a class="new" href="#">+ New Game</a></li>
+					<li><a class="what" href="#">How to Play</a></li>
+					<li><a class="new" href="#">Start New Game</a></li>
 				</ul>
 			</nav>
 			
@@ -34,14 +40,14 @@
 				<div class="content">
 					<h3>What do I do?</h3>
 					<div>
-						<p>This is a Hot or Cold Number Guessing Game. The game goes like this: </p>
+						<p>This is how it works: we guess a number between 1 and 100, and you try to figure it out!</p>
 						<ul>
-							<li>1. I pick a <strong>random secret number</strong> between 1 to 100 and keep it hidden.</li>
-							<li>2. You need to <strong>guess</strong> until you can find the hidden secret number.</li>
-							<li>3. You will <strong>get feedback</strong> on how close ("hot") or far ("cold") your guess is.</li>
+							<li>1. First, we pick a <strong>random number</strong> between 1 to 100 and keep it hidden from you.</li>
+							<li>2. You'll need to <strong>keep guessing</strong> until you can guess this hidden secret number.</li>
+							<li>3. To help you out, we'll <strong>give you feedback</strong> on how hot or cold you are, and whether you're too high or too low.</li>
 						</ul>
-						<p>So, Are you ready?</p>
-						<a class="close" href="#">Got It!</a>
+						<p>Ready to play? </p>
+						<a class="close" href="#">Yup!</a>
 					</div>
 				</div>
 			</div>
@@ -55,7 +61,7 @@
 			
 			<h2 id="feedback">Make your Guess!</h2>
 
-			<form id="submitGuess">
+			<form id="submitGuess" title="Hint: Enter 'new' to start a new game!">
 				<input type="text" name="userGuess" id="userGuess" class="text" maxlength="3" autocomplete="off" placeholder="Enter your Guess" required/>
       			<input type="submit" id="guessButton" class="button" name="submit" value="Guess"/>
 			</form>
@@ -65,7 +71,7 @@
 			<ul id="guessList" class="guessBox clearfix">
 
 			</ul>
-
+			<p id="about">Chris Slaight, 2015</p>
 		</section>
 	</body>
 </html>
