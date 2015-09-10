@@ -26,7 +26,7 @@ $(document).ready(function(){
   	generateNewRandomNumber();
 
   	//Event handling code for new game link
-  	$('.new').on('click', function(){
+  	$('.new').on('click touchstart', function(){
   		newGame(); //create a new game through below function
   	});
 
