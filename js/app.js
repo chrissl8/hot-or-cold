@@ -73,35 +73,53 @@ function makeGuess(guessValue) {
 	//If they actually guess the number, they win!
 	else
 	{
+		$('#feedback').text("You got it!!");
 		console.log("You got it!");
 	}
 }
 
 //Function to determine hot-cold amount
 function hotOrCold(diff) {
-	if(diff <= 10)
+	if(diff <= 2)
 		{
-			//hot
+			//On fire
+			$('#feedback').text("On fire!!");
 			console.log("Hot");
 		}
-		else if(diff >= 11 && diff <= 20)
+	else if(diff >= 3 && diff <= 5)
+		{
+			//burning hot
+			$('#feedback').text("Burning hot!");
+			console.log("Hot");
+		}
+	else if(diff >= 6 && diff <= 10)
+		{
+			//hot
+			$('#feedback').text("Hot!");
+			console.log("Hot!");
+		}
+	else if(diff >= 11 && diff <= 20)
 		{
 			//warm
+			$('#feedback').text("Warm!");
 			console.log("Warm");
 		}
-		else if(diff >= 21 && diff <= 30)
+	else if(diff >= 21 && diff <= 30)
 		{
 			//cool
+			$('#feedback').text("Cool!");
 			console.log("Cool");
 		}
-		else if(diff >= 31 && diff <= 40)
+	else if(diff >= 31 && diff <= 40)
 		{
 			//cold
+			$('#feedback').text("Cold!");
 			console.log("Cold");
 		}
-		else if(diff >= 41)
+	else if(diff >= 41)
 		{
 			//freezing cold
+			$('#feedback').text("Freezing cold!");
 			console.log("Freezing cold");
 		}
 }
@@ -114,6 +132,7 @@ function incrementGuessCount() {
 
 //Function to reset the guess counter
 function resetGuessCount() {
+	guessCount = 0;
 	$("#count").text("0");
 }
 
@@ -122,7 +141,8 @@ function newGame() {
 
 	generateNewRandomNumber();
 	resetGuessCount();
-	$('li').remove();
+	$('#feedback').text("Make your Guess!");
+	$('#guessList li').remove();
 	console.log(numberToGuess);
 
 }
