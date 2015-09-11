@@ -65,8 +65,7 @@ $(document).ready(function(){
 //Function to call once a valid guess number is determined
 function makeGuess(guessValue) {
 
-	var listHTML = '<li>' +  guessValue +  '</li>'; //Build list element for guess
-	$('#guessList').prepend(listHTML); //Prepend list element to guess list
+	
 	incrementGuessCount(); //Increment guess count with below function
 	var difference; //Define variable to hold the difference between the random number and guess
 	var isGreater; //Define boolean var for too low/too high functionality
@@ -75,6 +74,8 @@ function makeGuess(guessValue) {
 	if(numberToGuess < guessValue)
 	{
 		//console.log("Number greater");
+		var listHTML = '<li class="hotGuess">' +  guessValue +  '</li>'; //Build list element for guess
+		$('#guessList').prepend(listHTML); //Prepend list element to guess list
 		difference = guessValue - numberToGuess; //Get the difference between the guess value and random number
 		isGreater = true; //Set isGreater flag to true
 		hotOrCold(difference, isGreater); //Pass the information to be processed in the hotOrCold function below
@@ -83,6 +84,8 @@ function makeGuess(guessValue) {
 	//If the user's guess is less than the random number 
 	else if (numberToGuess > guessValue)
 	{
+		var listHTML = '<li class="coldGuess">' +  guessValue +  '</li>'; //Build list element for guess
+		$('#guessList').prepend(listHTML); //Prepend list element to guess list
 		console.log("Number less");
 		//Get the difference between the random number and the guess value
 		difference = numberToGuess - guessValue; //Get the difference between the random number and guess value
@@ -92,6 +95,8 @@ function makeGuess(guessValue) {
 	//If they actually guess the number, they win!
 	else
 	{
+		var listHTML = '<li>' +  guessValue +  '</li>'; //Build list element for guess
+		$('#guessList').prepend(listHTML); //Prepend list element to guess list
 		$('#feedback').text(numberToGuess + " is correct, you win!!"); //Tell the user their winning number in the H2 element
 		$('h2').css('background-color','red'); //Set H2 element color to red
 		$('body').css('background-image', 'url(images/bg_fireworks.jpg)'); //Woo fireworks for the winner

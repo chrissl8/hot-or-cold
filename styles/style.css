@@ -219,6 +219,7 @@ h1 {
     rgb(30, 36, 60) 27px 27px,
     rgb(31, 37, 61) 28px 28px;
 	*/
+	opacity: 0.95;
 }
 
 h2 {
@@ -337,7 +338,7 @@ ul.guessBox {
 }
 ul.guessBox li {
 	display: inline;
-	background-color: #1a4e95;
+	background-color: red;
 	padding: 0.3em;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -345,6 +346,14 @@ ul.guessBox li {
 	width: 95%;
 	margin: 0.2em;
 	color: #fff;
+}
+
+ul.guessBox li.hotGuess {
+	background-color: #EE512A;
+}
+
+ul.guessBox li.coldGuess {
+	background-color: #2b40e1;
 }
 
 /* Responsive CSS Media Query for Mobile Devices: Tested iPhone 6 (non-plus) and below and Samsung Galaxy S6 */
